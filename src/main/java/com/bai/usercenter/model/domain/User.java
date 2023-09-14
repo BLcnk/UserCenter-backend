@@ -69,6 +69,11 @@ public class User implements Serializable {
     private Integer userStatus;
 
     /**
+     * 角色权限 0-普通用户 1-管理员
+     */
+    private Integer userRole;
+
+    /**
      * 创建时间
      */
 //    @TableField(value = "create_time")
@@ -81,10 +86,15 @@ public class User implements Serializable {
     private Date updateTime;
 
     /**
+     * 注册码---需要注册码才能成为网站用户
+     */
+    private String allowCode;
+
+    /**
      * 是否删除(逻辑删除。为了保护数据，设置0，1表示该条数据是否删除)
      */
-//    @TableField(value = "isDelete")
-    @TableLogic //设置逻辑删除，
+    @TableLogic //设置逻辑删除
+    @TableField(value = "isDelete")
     private Integer isDelete;
 
     @TableField(exist = false)

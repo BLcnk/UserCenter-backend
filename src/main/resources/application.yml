@@ -6,8 +6,13 @@ spring:
     username: root
     password: root
     url: jdbc:mysql://localhost:3306/user_center_project
+    # session 失效时间
+  session:
+    timeout: 86400 # 一天，单位秒
 server:
   port: 8080
+  servlet:
+    context-path: /api
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
